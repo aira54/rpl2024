@@ -26,6 +26,7 @@
                     <th scope="col">NISN</th>
                     <th scope="col">NAMA LENGKAP</th>
                     <th scope="col">ALAMAT</th>
+                    <th scope="col">FOTO</th>
                     <th scope="col">GENDER</th>
                     <th scope="col">AKSI</th>
                   </tr>
@@ -43,6 +44,7 @@
                       <td><?php echo $row['nisn'] ?></td>
                       <td><?php echo $row['nama_lengkap'] ?></td>
                       <td><?php echo $row['alamat'] ?></td>
+                      <td>DATA KOSONG</td>
                       <td><?php echo $row['gender'] ?></td>
                       <td class="text-center">
                         <a href="edit-siswa.php?id=<?php echo $row['id_siswa'] ?>" class="btn btn-sm btn-primary">EDIT</a>
