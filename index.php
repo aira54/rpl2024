@@ -1,5 +1,10 @@
 <?php
+session_start();
 include('koneksi.php');
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php');
+    exit();
+}
 
 $query = "SELECT * FROM burung_kalkun";
 $result = $koneksi->query($query);
@@ -10,14 +15,21 @@ $result = $koneksi->query($query);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="images-removebg-preview.png" href="images-removebg-preview.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>Data Siswa</title>
 </head>
 <body>
 
-<div class="container" style="margin-top: 80px">
+<div class="container" style="margin-top: 40px">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Selamat datang, <?php echo $_SESSION['user']; ?>!</h1>
+        <!-- Tombol Logout -->
+        <a href="logout.php" class="btn btn-danger">Logout</a>
+    </div><hr>
+
     <h2>TABEL SISWA</h2>
-    <a href="tambah-siswa.php" class="btn btn-primary">TAMBAH DATA</a>
+    <a href="tambah-siswa.php" class="btn btn-primary mb-3">TAMBAH DATA</a>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -32,9 +44,11 @@ $result = $koneksi->query($query);
         </thead>
         <tbody>
             <?php if ($result->num_rows > 0): ?>
-                <?php while($row = $result->fetch_assoc()): ?>
+                <?php 
+                    $no=1;
+                    while($row = $result->fetch_assoc()): ?>
                     <tr>
-                        <td><?php echo $row['id_siswa']; ?></td>
+                        <td><?php echo $no++; ?></td>
                         <td><?php echo $row['nisn']; ?></td>
                         <td><?php echo $row['nama_lengkap']; ?></td>
                         <td><?php echo $row['alamat']; ?></td>
