@@ -31,9 +31,14 @@
                             <textarea class="form-control" name="alamat" placeholder="Masukkan Alamat Siswa" rows="4" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Gender</label>
-                            <input type="text" name="gender" placeholder="Masukkan Gender Siswa" class="form-control" required>
-                        </div>
+    <label>Gender</label>
+    <select name="gender" class="form-control" required>
+        <option value="">Pilih Gender</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+    </select>
+</div>
+
                         <div class="form-group">
                             <label>Foto</label>
                             <input type="file" name="foto" class="form-control" required>

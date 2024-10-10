@@ -17,7 +17,7 @@ $result = $koneksi->query($query);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="images-removebg-preview.png" href="images-removebg-preview.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <title>Data Siswa</title>
+    <title>Data Santri</title>
 </head>
 <body>
 
@@ -28,7 +28,7 @@ $result = $koneksi->query($query);
         <a href="logout.php" class="btn btn-danger">Logout</a>
     </div><hr>
 
-    <h2>TABEL SISWA</h2>
+    <h2>TABEL SANTRI</h2>
     <a href="tambah-siswa.php" class="btn btn-primary mb-3">TAMBAH DATA</a>
     <table class="table table-bordered">
         <thead>
